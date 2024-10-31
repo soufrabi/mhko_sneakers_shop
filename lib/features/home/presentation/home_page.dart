@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mhko_sneakers_shop/features/home/presentation/home_bottom_nav_bar.dart';
 import 'package:mhko_sneakers_shop/features/home/presentation/home_drawer.dart';
 
 class HomePage extends StatelessWidget {
@@ -11,6 +12,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFFECECEC),
       ),
+      bottomNavigationBar: HomeBottomNavBar(),
       drawer: const HomeDrawer(),
       body: SingleChildScrollView(
         child: Column(
