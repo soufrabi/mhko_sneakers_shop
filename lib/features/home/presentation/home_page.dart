@@ -12,125 +12,127 @@ class HomePage extends StatelessWidget {
         backgroundColor: const Color(0xFFECECEC),
       ),
       drawer: const HomeDrawer(),
-      body: Column(
-        children: [
-          // Search bar
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: TextField(
-              autocorrect: false,
-              autofocus: false,
-              decoration: InputDecoration(
-                hintText: "Search ...",
-                hintStyle: const TextStyle(
-                  color: Colors.grey,
-                ),
-                filled: true,
-                fillColor: const Color(0xFFFBFBFB),
-                suffixIcon: const Icon(Icons.search),
-                suffixIconColor: Colors.grey,
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(10.0),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            // Search bar
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: TextField(
+                autocorrect: false,
+                autofocus: false,
+                decoration: InputDecoration(
+                  hintText: "Search ...",
+                  hintStyle: const TextStyle(
+                    color: Colors.grey,
+                  ),
+                  filled: true,
+                  fillColor: const Color(0xFFFBFBFB),
+                  suffixIcon: const Icon(Icons.search),
+                  suffixIconColor: Colors.grey,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
                 ),
               ),
             ),
-          ),
-          const Text(
-            "Everyone flies, Some fly longer than others.",
-            style: TextStyle(
-              color: Colors.grey,
+            const Text(
+              "Everyone flies, Some fly longer than others.",
+              style: TextStyle(
+                color: Colors.grey,
+              ),
             ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          const Text(
-            "Hot Picks 🔥",
-            style: TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.w500,
+            const SizedBox(
+              height: 10,
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.all(20.0),
-            // width: 500,
-            height: 400,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return Container(
-                  width: 300,
-                  margin: const EdgeInsets.only(
-                    right: 15.0,
-                  ),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFFAFAFA),
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Image.asset(
-                        "assets/boot.jpeg",
-                      ),
-                      const Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 25.0,
+            const Text(
+              "Hot Picks 🔥",
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(20.0),
+              // width: 500,
+              height: 400,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return Container(
+                    width: 300,
+                    margin: const EdgeInsets.only(
+                      right: 15.0,
+                    ),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFFAFAFA),
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Image.asset(
+                          "assets/boot.jpeg",
                         ),
-                        child: const Text(
-                          "The forward thinking design of his latest signature show.",
-                          style: TextStyle(
-                            color: Colors.grey,
+                        const Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 25.0,
+                          ),
+                          child: const Text(
+                            "The forward thinking design of his latest signature show.",
+                            style: TextStyle(
+                              color: Colors.grey,
+                            ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 25.0),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Air Jordan",
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w500,
+                        Padding(
+                          padding: const EdgeInsets.only(left: 25.0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Air Jordan",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                   ),
+                                  Text("\$240"),
+                                ],
+                              ),
+                              Container(
+                                padding: const EdgeInsets.all(18.0),
+                                decoration: const BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10.0),
+                                      bottomRight: Radius.circular(10.0)),
                                 ),
-                                Text("\$240"),
-                              ],
-                            ),
-                            Container(
-                              padding: const EdgeInsets.all(18.0),
-                              decoration: const BoxDecoration(
-                                color: Colors.black,
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(10.0),
-                                    bottomRight: Radius.circular(10.0)),
+                                child: const Icon(
+                                  Icons.add,
+                                  color: Colors.white,
+                                ),
                               ),
-                              child: const Icon(
-                                Icons.add,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                );
-              },
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  );
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
